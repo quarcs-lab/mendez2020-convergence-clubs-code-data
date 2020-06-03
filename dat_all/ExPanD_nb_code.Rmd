@@ -1,0 +1,257 @@
+---
+title: dat_all_final
+output: html_notebook
+---
+ 
+ 
+### Abstract
+TBA
+ 
+ 
+### Setup
+ 
+```{r setup}
+suppressWarnings(suppressMessages({
+  library(knitr)
+  library(kableExtra)
+  library(htmltools)
+  library(tidyverse)
+  library(scales)
+  library(ExPanDaR)
+}))
+knitr::opts_chunk$set(fig.align = 'center')
+```
+ 
+ 
+### Create Sample
+ 
+This step reads the raw data provided by `ExPanD()` and generates the sample for the analysis.
+ 
+```{r create_sample}
+create_sample <- function(df, df_def) {
+  # Set infinite numerical variables to NA
+  df[, df_def$var_name[df_def$type == "numeric"]] <-
+    lapply(df[, df_def$var_name[df_def$type == "numeric"]],
+      function(x) ifelse(is.finite(x), x, NA))
+ 
+  # Delete numerical variables that only contain NAs
+  all_na_vars <- sapply(df, function (x) all(is.na(x)))
+  df_def <- df_def[!all_na_vars,]
+  df <- df[, df_def$var_name]
+ 
+  # Drop observations that are NA in variables that are not allowed to
+  df <- df[complete.cases(df[, df_def$var_name[which(df_def$can_be_na == FALSE)]]), ]
+ 
+  df <- droplevels(df)
+  return(list(df = df, df_def = df_def))
+}
+ 
+load("ExPanD_nb_data.Rdata")
+ 
+smp_list <- create_sample(nb_df, nb_df_def)
+smp <- smp_list$df
+smp_def <- smp_list$df_def
+```
+ 
+ 
+### Bar Chart
+ 
+```{r bar_chart}
+df <- smp
+df$year <- as.factor(df$year)
+df$hi1990 <- as.factor(df$hi1990)
+p <- ggplot(df, aes(x = year)) +
+  geom_bar(aes(fill = hi1990), position = "fill") +
+  labs(x = "year", fill = "hi1990", y = "Percent") +
+scale_y_continuous(labels = percent_format())
+p <- p + scale_x_discrete(breaks = pretty(as.numeric(as.character(df$year)), n = 10))
+p
+```
+ 
+ 
+### Missing Values
+ 
+```{r missing_values}
+df <- smp
+prepare_missing_values_graph(df, "year")
+```
+ 
+ 
+### Descriptive Statistics
+ 
+```{r descriptive_statistics}
+df <- smp
+t <- prepare_descriptive_table(smp)
+t$kable_ret  %>%
+  kable_styling("condensed", full_width = F, position = "center")
+```
+ 
+ 
+### Histogram
+ 
+```{r histogram}
+var <- as.numeric(smp$log_lp[smp$year == "1990"])
+hist(var, main="", xlab = "log_lp", col="red", right = FALSE, breaks= 25)
+```
+ 
+ 
+### Extreme Observations
+ 
+```{r extreme_obs}
+df <- smp
+vars <- c("country", "year", "GDPpc", "year")
+df <- df[df$year == "1990", ]
+df <- df[, vars]
+df <- droplevels(df[complete.cases(df), ])
+if (nrow(df) <= 10) {
+  cat("Not enough data to generate table")
+} else {
+  tab <- prepare_ext_obs_table(df, var = "GDPpc")
+  tab$kable_ret %>%
+    kable_styling()
+}
+```
+ 
+ 
+### By Group Bar Graph
+ 
+```{r by_group_bar_graph}
+df <- smp
+df <- df[df$year == "1990", ]
+prepare_by_group_bar_graph(df, "hi1990", "lp", mean, TRUE)$plot +
+  ylab("mean lp")
+```
+ 
+ 
+### By Group Violin Graph
+ 
+```{r by_group_violin_graph}
+df <- smp
+prepare_by_group_violin_graph(df, "region", "log_lp", TRUE)
+```
+ 
+ 
+### Trend Graph
+ 
+```{r trend_graph}
+df <- smp
+prepare_trend_graph(df, "year", c("lp"))$plot
+```
+ 
+ 
+### Quantile Trend Graph
+ 
+```{r quantile_trend_graph}
+df <- smp
+prepare_quantile_trend_graph(df, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "lp")$plot
+```
+ 
+ 
+#### lp  
+```{r}
+log_lp_raw <- prepare_quantile_trend_graph(smp, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "log_lp_raw")$plot
+```
+
+
+```{r}
+log_lp_raw <- log_lp_raw +
+theme_minimal() +
+  guides(color = guide_legend(reverse = TRUE)) +
+  scale_color_discrete(name = "Quantile") +
+  labs(x = "",
+       y = "Log of Labor Productivity")
+ggsave("quintiles_all_log_lp_raw.pdf", width = 6, height = 4)
+```
+
+#### ky  
+
+```{r}
+log_ky_raw <- prepare_quantile_trend_graph(smp, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "log_ky_raw")$plot
+```
+
+
+```{r}
+log_ky_raw <- log_ky_raw +
+theme_minimal() +
+  guides(color = guide_legend(reverse = TRUE)) +
+  scale_color_discrete(name = "Quantile") +
+  labs(x = "",
+       y = "Log of Capital-Output Ratio")
+ggsave("quintiles_all_log_ky_raw.pdf", width = 6, height = 4)
+```   
+
+
+#### h  
+
+```{r}
+log_h_raw <- prepare_quantile_trend_graph(smp, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "log_h_raw")$plot
+```
+
+
+```{r}
+log_h_raw <- log_h_raw +
+theme_minimal() +
+  guides(color = guide_legend(reverse = TRUE)) +
+  scale_color_discrete(name = "Quantile") +
+  labs(x = "",
+       y = "Log of Human Capital")
+ggsave("quintiles_all_log_h_raw.pdf", width = 6, height = 4)
+```  
+
+
+#### TFP  
+
+```{r}
+log_tfp_raw <- prepare_quantile_trend_graph(smp, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "log_tfp_raw")$plot
+```
+
+
+```{r}
+log_tfp_raw <- log_tfp_raw +
+theme_minimal() +
+  guides(color = guide_legend(reverse = TRUE)) +
+  scale_color_discrete(name = "Quantile") +
+  labs(x = "",
+       y = "Log of Aggregate Efficiency")
+ggsave("quintiles_all_log_tfp_raw.pdf", width = 6, height = 4)
+```   
+
+ 
+### Correlation Graph
+ 
+```{r corrplot}
+df <- smp
+ret <- prepare_correlation_graph(df[, c(3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 29, 30, 31, 34, 35, 36, 37, 38, 39, 40)])
+```
+ 
+ 
+### Scatter Plot
+ 
+```{r scatter_plot}
+df <- smp
+df <- df[, c("country", "year", "log_lp", "log_GDPpc", "region", "pop")]
+df <- df[complete.cases(df), ]
+df$region <- as.factor(df$region)
+set.seed(42)
+df <- sample_n(df, 1000)
+prepare_scatter_plot(df, "log_lp", "log_GDPpc", color = "region", size = "pop", loess = 1)
+```
+ 
+ 
+### Regresssion Table
+ 
+```{r regression}
+df <- smp
+df <- df[, c("log_lp", "log_ky", "log_h", "log_tfp", "country", "year", "hi1990")]
+df <- df[complete.cases(df), ]
+df$hi1990 <- as.factor(df$hi1990)
+df <- droplevels(df)
+t <- prepare_regression_table(df, dvs = "log_lp", idvs = c("log_ky", "log_h", "log_tfp"), feffects = c("country", "year"), clusters = c("country", "year"), byvar = "hi1990", models = "ols")
+HTML(t$table)
+```
+ 
+ 
+### Note
+ 
+This Notebook has been automatically generated using the [ExPanDaR](https://joachim-gassen.github.io/ExPanDaR) package.
+ 
