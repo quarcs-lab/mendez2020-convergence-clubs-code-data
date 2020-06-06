@@ -2988,23 +2988,19 @@ pre {font-size: 12px;}
 <h1><span class="header-section-number">1</span> Libraries</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6Om9wdHNfY2h1bmskc2V0KFxuICBlY2hvID0gVFJVRSxcbiAgbWVzc2FnZSA9IEZBTFNFLFxuICB3YXJuaW5nID0gRkFMU0VcbilcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShoYXZlbilcbmxpYnJhcnkoRXhQYW5EYVIpICAgICAgIyBleHBsb3JlIHBhbmVsIGRhdGEgaW50ZXJhY3RpdmVseSAgXG5saWJyYXJ5KERUKSAgICAgICAgICAgICMgaW50ZXJhY3RpdmUgdGFibGVzXG5saWJyYXJ5KHBtZHBseXIpICAgICAgICMgbWFuYWdpbmcgcGFuZWwgYW5kIGhpZXJhcmNoaWNhbCBkYXRhXG5saWJyYXJ5KHBhbmVscilcbmxpYnJhcnkoZ2dhbmltYXRlKSAgICAgIyBhbmltYXRlZFxudGhlbWVfc2V0KHRoZW1lX21pbmltYWwoKSlcblxuIyBDaGFuZ2UgdGhlIHByZXNlbnRhdGlvbiBvZiBkZWNpbWFsIG51bWJlcnMgdG8gNCBhbmQgYXZvaWQgc2NpZW50aWZpYyBub3RhdGlvblxub3B0aW9ucyhwcm9tcHQ9XCJSPiBcIiwgZGlnaXRzPTYsIHNjaXBlbj03KVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6Om9wdHNfY2h1bmskc2V0KFxuICBlY2hvID0gVFJVRSxcbiAgbWVzc2FnZSA9IEZBTFNFLFxuICB3YXJuaW5nID0gRkFMU0VcbilcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShFeFBhbkRhUikgICAgICAjIGV4cGxvcmUgcGFuZWwgZGF0YSBpbnRlcmFjdGl2ZWx5ICBcblxudGhlbWVfc2V0KHRoZW1lX21pbmltYWwoKSlcblxuIyBDaGFuZ2UgdGhlIHByZXNlbnRhdGlvbiBvZiBkZWNpbWFsIG51bWJlcnMgdG8gNCBhbmQgYXZvaWQgc2NpZW50aWZpYyBub3RhdGlvblxub3B0aW9ucyhwcm9tcHQ9XCJSPiBcIiwgZGlnaXRzPTYsIHNjaXBlbj03KVxuYGBgIn0= -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="dt">echo =</span> <span class="ot">TRUE</span>,</span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="dt">message =</span> <span class="ot">FALSE</span>,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="dt">warning =</span> <span class="ot">FALSE</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a>)</span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">library</span>(haven)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">library</span>(ExPanDaR)      <span class="co"># explore panel data interactively  </span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">library</span>(DT)            <span class="co"># interactive tables</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">library</span>(pmdplyr)       <span class="co"># managing panel and hierarchical data</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="kw">library</span>(panelr)</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">library</span>(gganimate)     <span class="co"># animated</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">theme_set</span>(<span class="kw">theme_minimal</span>())</span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># Change the presentation of decimal numbers to 4 and avoid scientific notation</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="kw">options</span>(<span class="dt">prompt=</span><span class="st">&quot;R&gt; &quot;</span>, <span class="dt">digits=</span><span class="dv">6</span>, <span class="dt">scipen=</span><span class="dv">7</span>)</span></code></pre></div>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">library</span>(ExPanDaR)      <span class="co"># explore panel data interactively  </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">theme_set</span>(<span class="kw">theme_minimal</span>())</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Change the presentation of decimal numbers to 4 and avoid scientific notation</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">options</span>(<span class="dt">prompt=</span><span class="st">&quot;R&gt; &quot;</span>, <span class="dt">digits=</span><span class="dv">6</span>, <span class="dt">scipen=</span><span class="dv">7</span>)</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -3013,19 +3009,59 @@ pre {font-size: 12px;}
 <h1><span class="header-section-number">2</span> Import data</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0IDwtIHJlYWRfc3RhdGEoXCJkYXQuZHRhXCIpIFxuYGBgIn0= -->
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>dat &lt;-<span class="st"> </span><span class="kw">read_stata</span>(<span class="st">&quot;dat.dta&quot;</span>) </span></code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0IDwtIHJlYWRfY3N2KFwiZGF0LmNzdlwiKSBcbmBgYCJ9 -->
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;dat.csv&quot;</span>) </span></code></pre></div>
 <!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xpbXBzZShkYXQpXG5gYGAifQ== -->
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">glimpse</span>(dat)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMiw3MDBcbkNvbHVtbnM6IDI5XG4kIGlkICAgICAgICAgICAgPGRibD4gNjIsIDYyLCA2MiwgNjIsIDYyLCA2MiwgNjIsIDEzLCAxMywgMTMsIDEzLCA2MiwgMTMsIDEzLCAx4oCmXG4kIGNvdW50cnkgICAgICAgPGNocj4gXCJNb3phbWJpcXVlXCIsIFwiTW96YW1iaXF1ZVwiLCBcIk1vemFtYmlxdWVcIiwgXCJNb3phbWJpcXVlXCIsIFwi4oCmXG4kIHllYXIgICAgICAgICAgPGRibD4gMTk5MCwgMTk5MSwgMTk5MiwgMTk5MywgMTk5NCwgMTk5NSwgMTk5NiwgMjAwNCwgMjAwMywgMjAw4oCmXG4kIFkgICAgICAgICAgICAgPGRibD4gNzAzNCwgNzc0MywgNjc5MiwgNzIyMywgODE5NCwgNzY3MSwgOTEyNSwgNDkzNiwgNDY2NiwgNDkw4oCmXG4kIEsgICAgICAgICAgICAgPGRibD4gNjI2MiwgNjQ2MiwgNjU5MiwgNjg1OSwgNzI0NiwgNzczNCwgODEyMSwgMTAwNDcsIDkzMTEsIDEw4oCmXG4kIHBvcCAgICAgICAgICAgPGRibD4gMTMuMzcxOTcsIDEzLjcxOTg1LCAxNC4yMDM5OSwgMTQuNzc1ODgsIDE1LjM2MzA3LCAxNS45MTMx4oCmXG4kIEwgICAgICAgICAgICAgPGRibD4gNS40MTM3MSwgNS41OTMxOSwgNS44NDQ3MywgNi4xODc4NiwgNi41MTM2NywgNi44MDQ3MiwgNy4w4oCmXG4kIHMgICAgICAgICAgICAgPGRibD4gMC45OTY0NjksIDAuOTgyOTM4LCAwLjk2OTQwNywgMC45NTU4NzYsIDAuOTQyMzQ0LCAwLjkyODgx4oCmXG4kIGFscGhhX2l0ICAgICAgPGRibD4gMC41NzM3NzEsIDAuNTczNzcxLCAwLjU3Mzc3MSwgMC41NzM3NzEsIDAuNTczNzcxLCAwLjU3Mzc34oCmXG4kIEdEUHBjICAgICAgICAgPGRibD4gNTI2LjAyNiwgNTY0LjM2NSwgNDc4LjE3NiwgNDg4LjgzNywgNTMzLjM1NywgNDgyLjA1NiwgNTU24oCmXG4kIGxwICAgICAgICAgICAgPGRibD4gMTI5OS4yOSwgMTM4NC4zNiwgMTE2Mi4wNywgMTE2Ny4yOSwgMTI1Ny45NywgMTEyNy4zMSwgMTI54oCmXG4kIGggICAgICAgICAgICAgPGRibD4gMS4zNDcwOCwgMS4zNDM2MywgMS4zNDAxOCwgMS4zMzY3MiwgMS4zMzMyNSwgMS4zMjk3NywgMS4z4oCmXG4kIGtsICAgICAgICAgICAgPGRibD4gMTE1Ni42OSwgMTE1NS4zMywgMTEyNy44NSwgMTEwOC40NiwgMTExMi40MywgMTEzNi41NiwgMTE04oCmXG4kIGtwICAgICAgICAgICAgPGRibD4gMS4xMjMyODMsIDEuMTk4MjM2LCAxLjAzMDM0MCwgMS4wNTMwNjksIDEuMTMwODMxLCAwLjk5MTg14oCmXG4kIGt5ICAgICAgICAgICAgPGRibD4gMC44OTAyNDcsIDAuODM0NTYwLCAwLjk3MDU1NCwgMC45NDk2MDUsIDAuODg0MzA2LCAxLjAwODIx4oCmXG4kIFRGUCAgICAgICAgICAgPGRibD4gMjAzLjk1NSwgMjIwLjAwMywgMTg5LjExNSwgMTk0Ljk2MiwgMjEzLjczNywgMTkzLjE5OSwgMjIy4oCmXG4kIGxvZ19HRFBwY19yYXcgPGRibD4gNi4yNjUzNSwgNi4zMzU3MCwgNi4xNjk5OCwgNi4xOTIwMywgNi4yNzkxOSwgNi4xNzgwNiwgNi4z4oCmXG4kIGxvZ19scF9yYXcgICAgPGRibD4gNy4xNjk1OCwgNy4yMzI5OSwgNy4wNTc5NiwgNy4wNjI0NCwgNy4xMzcyNSwgNy4wMjc1OSwgNy4x4oCmXG4kIGxvZ19reV9yYXcgICAgPGRibD4gLTAuMTE2MjU1OTQsIC0wLjE4MDg1MDMxLCAtMC4wMjk4ODg2NywgLTAuMDUxNzA4NzQsIC0wLjEy4oCmXG4kIGxvZ19oX3JhdyAgICAgPGRibD4gMC4yOTc5MzYsIDAuMjk1Mzc3LCAwLjI5MjgwNSwgMC4yOTAyMTksIDAuMjg3NjIwLCAwLjI4NTAw4oCmXG4kIGxvZ190ZnBfcmF3ICAgPGRibD4gNS4zMTc5MCwgNS4zOTM2NCwgNS4yNDIzNSwgNS4yNzI4MCwgNS4zNjQ3NSwgNS4yNjM3MiwgNS404oCmXG4kIGxvZ19HRFBwYyAgICAgPGRibD4gNi4xNjM3NSwgNi4xOTU3MiwgNi4yMjc5NSwgNi4yNjEwNCwgNi4yOTU0NCwgNi4zMzE0NCwgNi4z4oCmXG4kIGxvZ19scCAgICAgICAgPGRibD4gNy4wNTAyMywgNy4wNzU3NCwgNy4xMDE1NSwgNy4xMjgzNSwgNy4xNTY3MywgNy4xODcwOSwgNy4y4oCmXG4kIGxvZ19reSAgICAgICAgPGRibD4gLTAuMTI5MDYzLCAtMC4xMzAxNjIsIC0wLjEzMTIyOCwgLTAuMTMyMzU4LCAtMC4xMzMzOTEsIC0w4oCmXG4kIGxvZ19oICAgICAgICAgPGRibD4gMC4yNzcwNDAsIDAuMjc5Njg5LCAwLjI4MjM4OSwgMC4yODUyMzMsIDAuMjg4MzM5LCAwLjI5MTgz4oCmXG4kIGxvZ190ZnAgICAgICAgPGRibD4gNS4yNTc0OSwgNS4yODY5MiwgNS4zMTY1MCwgNS4zNDY2NSwgNS4zNzc2MCwgNS40MDkzOSwgNS404oCmXG4kIHJlZ2lvbiAgICAgICAgPGNocj4gXCJBZnJpY2FcIiwgXCJBZnJpY2FcIiwgXCJBZnJpY2FcIiwgXCJBZnJpY2FcIiwgXCJBZnJpY2FcIiwgXCJBZnJpY2HigKZcbiQgaGkxOTkwICAgICAgICA8Y2hyPiBcIm5vXCIsIFwibm9cIiwgXCJub1wiLCBcIm5vXCIsIFwibm9cIiwgXCJub1wiLCBcIm5vXCIsIFwibm9cIiwgXCJub1wiLCBcIm5v4oCmXG4kIGlzb2NvZGUgICAgICAgPGNocj4gXCJNT1pcIiwgXCJNT1pcIiwgXCJNT1pcIiwgXCJNT1pcIiwgXCJNT1pcIiwgXCJNT1pcIiwgXCJNT1pcIiwgXCJCRElcIiwgXCLigKZcbiJ9 -->
+<pre><code>Rows: 2,700
+Columns: 29
+$ id            &lt;dbl&gt; 62, 62, 62, 62, 62, 62, 62, 13, 13, 13, 13, 62, 13, 13, 1…
+$ country       &lt;chr&gt; &quot;Mozambique&quot;, &quot;Mozambique&quot;, &quot;Mozambique&quot;, &quot;Mozambique&quot;, &quot;…
+$ year          &lt;dbl&gt; 1990, 1991, 1992, 1993, 1994, 1995, 1996, 2004, 2003, 200…
+$ Y             &lt;dbl&gt; 7034, 7743, 6792, 7223, 8194, 7671, 9125, 4936, 4666, 490…
+$ K             &lt;dbl&gt; 6262, 6462, 6592, 6859, 7246, 7734, 8121, 10047, 9311, 10…
+$ pop           &lt;dbl&gt; 13.37197, 13.71985, 14.20399, 14.77588, 15.36307, 15.9131…
+$ L             &lt;dbl&gt; 5.41371, 5.59319, 5.84473, 6.18786, 6.51367, 6.80472, 7.0…
+$ s             &lt;dbl&gt; 0.996469, 0.982938, 0.969407, 0.955876, 0.942344, 0.92881…
+$ alpha_it      &lt;dbl&gt; 0.573771, 0.573771, 0.573771, 0.573771, 0.573771, 0.57377…
+$ GDPpc         &lt;dbl&gt; 526.026, 564.365, 478.176, 488.837, 533.357, 482.056, 556…
+$ lp            &lt;dbl&gt; 1299.29, 1384.36, 1162.07, 1167.29, 1257.97, 1127.31, 129…
+$ h             &lt;dbl&gt; 1.34708, 1.34363, 1.34018, 1.33672, 1.33325, 1.32977, 1.3…
+$ kl            &lt;dbl&gt; 1156.69, 1155.33, 1127.85, 1108.46, 1112.43, 1136.56, 114…
+$ kp            &lt;dbl&gt; 1.123283, 1.198236, 1.030340, 1.053069, 1.130831, 0.99185…
+$ ky            &lt;dbl&gt; 0.890247, 0.834560, 0.970554, 0.949605, 0.884306, 1.00821…
+$ TFP           &lt;dbl&gt; 203.955, 220.003, 189.115, 194.962, 213.737, 193.199, 222…
+$ log_GDPpc_raw &lt;dbl&gt; 6.26535, 6.33570, 6.16998, 6.19203, 6.27919, 6.17806, 6.3…
+$ log_lp_raw    &lt;dbl&gt; 7.16958, 7.23299, 7.05796, 7.06244, 7.13725, 7.02759, 7.1…
+$ log_ky_raw    &lt;dbl&gt; -0.11625594, -0.18085031, -0.02988867, -0.05170874, -0.12…
+$ log_h_raw     &lt;dbl&gt; 0.297936, 0.295377, 0.292805, 0.290219, 0.287620, 0.28500…
+$ log_tfp_raw   &lt;dbl&gt; 5.31790, 5.39364, 5.24235, 5.27280, 5.36475, 5.26372, 5.4…
+$ log_GDPpc     &lt;dbl&gt; 6.16375, 6.19572, 6.22795, 6.26104, 6.29544, 6.33144, 6.3…
+$ log_lp        &lt;dbl&gt; 7.05023, 7.07574, 7.10155, 7.12835, 7.15673, 7.18709, 7.2…
+$ log_ky        &lt;dbl&gt; -0.129063, -0.130162, -0.131228, -0.132358, -0.133391, -0…
+$ log_h         &lt;dbl&gt; 0.277040, 0.279689, 0.282389, 0.285233, 0.288339, 0.29183…
+$ log_tfp       &lt;dbl&gt; 5.25749, 5.28692, 5.31650, 5.34665, 5.37760, 5.40939, 5.4…
+$ region        &lt;chr&gt; &quot;Africa&quot;, &quot;Africa&quot;, &quot;Africa&quot;, &quot;Africa&quot;, &quot;Africa&quot;, &quot;Africa…
+$ hi1990        &lt;chr&gt; &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no…
+$ isocode       &lt;chr&gt; &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;MOZ&quot;, &quot;BDI&quot;, &quot;…</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Select all variables but id</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0IDwtIGRhdCAlPiUgXG4gIHNlbGVjdChcbiAgICAtaWRcbiAgKVxuYGBgIn0= -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw">select</span>(</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="op">-</span>id</span>
-<span id="cb3-4"><a href="#cb3-4"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="st">  </span><span class="kw">select</span>(</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="op">-</span>id</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  )</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -3035,13 +3071,13 @@ pre {font-size: 12px;}
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfZGVmaW5pdGlvbnMgPC0gcmVhZF9jc3YoXCJkYXQtZGVmaW5pdGlvbnMuY3N2XCIpIFxuZGZfZGVmaW5pdGlvbnMgXG5gYGAifQ== -->
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>df_definitions &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;dat-definitions.csv&quot;</span>) </span>
-<span id="cb4-2"><a href="#cb4-2"></a>df_definitions </span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>df_definitions &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;dat-definitions.csv&quot;</span>) </span>
+<span id="cb6-2"><a href="#cb6-2"></a>df_definitions </span></code></pre></div>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93Ijo0MCwibmNvbCI6M30sInJkZiI6Ikg0c0lBQUFBQUFBQUErMVhXMi9UTUJRTzdicExZVEN1QXZIaUIwQWQycXB1TUtGeGtiaU9UVXhRYmVPeXA4cHpuTVJxWmtlT3MxR2UrSm44R29hZCtxUk5TTmRPd0JzUFRjL3RPemNmTzg3TzZ5K3I5UzkxeDNFcVRyVldjU3BWVFU1VjlPT2NNK1hNbWYrdmpsTzlxZ21qV2RDL2hsWE1FSkZ3Slh1V25lcFJMQUd6RDhRN1MxUWpFWUZzRzRqWUVyTTRqQUxjWWNyeXRiZXYyeEd4VENYTWdBR0l1bUZHUlJrRmlWVDNOdHFXbkErRjMwbWRkU1ErdHNLNkVZWlJVZEx0RFVubWpDUVlFcHczQXVWRlJadmhUS2Y3am9lNUxLbGE2aEE2WjUyQnBhUStFeHk0Z0syc3I3ZkFsTVdDQ0pkQ0dpUk1EanE1T0FzZTR6ajhYVDRuYVY0d3dHWlpGYkNaSExDWm9KN1pRQTJYOGxBUXoxb2s4QmN5aTBHOWwvUFFnYUp1d1VhU243VTd1d3B6RjB1WGZhTXVzb09IT0Q2a3FPRkpjWWphbi9jV1lSRDNCNE5ZMWVzRHRiYURYc3dJRHRFckhER0ZZWVRxYlJFbElWYURGVGkvalErRVJCdENFdWo3RmVNelJzSkR1eVFRSW1UY3Q1b2JuN0JrK0NDazRCYnRCbGdDN3FLT2p5SXFFVW1WNEswZm9DMkZteERGanBpQ1BsL2RUQTR4ejF4dGNaZCtCUkFJamJ2UFFuWXBGSGtOTkNVT1FiZjhJVkZSb3RDT0tSUjBMM3hmang1V0ZMM3hQRVlZNVFSdzE3ZUZiOG90emYrV1ZZNHM0N1kxT0MyNE5ja1ZiSFhJNnZhRXFXb0RFMVVlNXY2ZXBOeEZqYzMydzFacjBTRENNWW5kRzRVb3JYTnBsUFVwZGQwZGhTa3JkR1NBVTFabWNTYzlMWFJqZkNtU0NEVmVoVGlPbWJaS1o5aWdWVURSeC9ld0g1NXNNajlBakJPaGR3dHNuUVpPcDNtMXRkcGFNdE1VdXVnbDVsMUVjczdBeGMydDNRL0lIRU1vM1d6R3Y5NXc2MDA0cFo1dWNhYVlUc2xzNmhoNXV2bnFyRXZ6ZU1PY0NuL2k0Y0VPTmZ2NGlLSXp6OFd6eVF2b3IyRFowaitadElMUkx0YkdsbkRLNkQyYXZJaXlZVnliTlAweWNITnM0bVdvbHhOblBPNG9lRDVoOHVQOGpGK0EwcTJaZjF2VlNOeGhMakJxaUpuaHlTR1ZqUHhuL3pJNzdhVkwrb2ZjR1p6K1k5UDhIYnhtYmpxeG5iSXFYTFdPc093WUJXQU43MUlQcmtHcUY5R0NuemtwanB2Z2E5N2Ntci9yeDhuSnlZOWl3UFE5WUFPQ3NPNWloWnVlTkNFZDUyY0JNaU1pODhyUW9JcjVXcGcxZ0ZUZC93SHRGT2poQU9ka1FiQ1FjSk90dTB5Q2hIZVhWOVlLNEhsTE40Ym9hait2eW9uMU5RdjlvUHJtQnJucURzVFl6enAzakNVZlhPbW1LZmNaQjJVdHhBY1VEcXlMdW9GcC81cVJaQnkrVitwYUdqZVZHTHBVRWhHQ0pHMlY4L01YMWhjTkptb05BQUE9In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInNwZWNfdGJsX2RmIiwidGJsX2RmIiwidGJsIiwiZGF0YS5mcmFtZSJdLCJucm93IjoyOCwibmNvbCI6M30sInJkZiI6Ikg0c0lBQUFBQUFBQUErMVd6VS9iTUJRUERlV2pDSWJHTm0wYUJ4KzJxVXhRZFlnTDJtbURNZERRVnRGdXdLa3lqcE5ZVFczTGNZRHV0RDkyZndlZG5mcVZFTFhkWmNjZGtyNzNlMzYvOTJHL3VHZUhGN3UxaTVybmVSWFByMWE4aW0vRStZcDV6WG56M3JMOXZmVThmOE1JMXJKdW5rMW5XQ1FpNDFvTm5Eby9vRmlCenlVSVg1emdTeUVCT3dVaGRjSVNUbVNNdTB3N3ZmcjVzQ1dKVXlySjJERUdxSmVNSlRtV0lCRy9jOVJ5NG1vaW9tNU8xbFg0eG9FMUN5YXlqUFFHQldUWkluRUJXTEdBRG1WNVRUSFRoUkZ4VVJzblZjMEpvWE9PREZZcUdqSEJRWXZadS8zOUppeGxxU0Fpb0tYZXYycHJ6QU9zQXZhVEJzaHRCT0s0VDFFOVZLS1BXdWVkTGRpWXkvdU44VTIrVGx4dnhZT1VFWnlnQXl5Wnh0RFNXa3ZJTE1INlBxT1ZVM3dsRkRvU2lsQUhQYmFjS1JJaGFwTllpSVR4eUZtZS9jQ0s0YXVFQWkxcXgxaUIzNXFKanlSVmlPUkdZQnNGYUNrUlpFU3phNmFoYlJ2SFdSL3pNZFVKRCtndE9BRm82YzZGNmxFbzhnbFlKaENDYmVkYnBtV20wWmt0Rkd3Zm9zaHNCZFlVZlFwRFJoamxCUHllbm9ySWxqc3gveGZPT0xXTWwyN0JyT0J1eVlPQ25RMDVXMGZZcW80dzBaUER2TzBveWdOVVAyN3ROWnRiMWlQNVMySnZwbmxNckhONzJ1b1pkYjJlNWpPcDBLa0JadXpNMWxrK1BhWXhrUktaUlBXREJLY3BNNnZ5TTJ5OWRVelI5Njh3RCsrUFdSUWp4b2t3MHdLalU4ZjVhZDV0N2phMzdXbEtBdlFSOHg0aUQ4aUE0dmxKK3h1eVk0bnlZYlA4WnVEMkc4M1NtRlpKMm1VQktMcWdMUEtzVHhVai85Vi9yQzZFK1hqTTFCNWVjRlg3MlV6ZHp2bHdKVjFqMWJVR2lHTDFnSWJ3VGRVRFNVczh5MHJjTklCcjFWNUp2OHhyT0J6K0xnZk1ENVVMQ0dBdHdCbzNRbVZEZXQ1ZHlXVlJTSHYrakZQRlhzVkwxaUUzang2UXZaSmNERENuU3NDampOdHNneDBTWjd5M3MxZnlYWFh5WmtIMlIybFZobzVxQ2RwQnpTMEFxWm9HcERnYU4rNEdLMzUvUFN4UUhqRU94bXFDcnlnTS81cnBYOTYraGxTTXczK0Jta0hUaGhhRkM0cUlCSkM4VTk3ZEgxVEVpbzNHQ0FBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["var_name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["var_def"],"name":[2],"type":["chr"],"align":["left"]},{"label":["type"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"country","2":"Standardized country name (from PWT)","3":"cs_id"},{"1":"year","2":"Year","3":"ts_id"},{"1":"Y","2":"GDP","3":"numeric"},{"1":"K","2":"Physical Capital","3":"numeric"},{"1":"pop","2":"Population","3":"numeric"},{"1":"L","2":"Labor Force","3":"numeric"},{"1":"s","2":"Years of Schooling","3":"numeric"},{"1":"alpha_it","2":"Variable Capital Share","3":"numeric"},{"1":"GDPpc","2":"GDP per capita","3":"numeric"},{"1":"lp","2":"Labor Productivity","3":"numeric"},{"1":"h","2":"Human Capital Index","3":"numeric"},{"1":"kl","2":"Capital per Worker","3":"numeric"},{"1":"kp","2":"Capital Productivity","3":"numeric"},{"1":"ky","2":"Capital-Output Ratio","3":"numeric"},{"1":"TFP","2":"Aggregate Efficiency","3":"numeric"},{"1":"log_GDPpc_raw","2":"Log of GDP per capita","3":"numeric"},{"1":"log_lp_raw","2":"Log of Labor Productivity","3":"numeric"},{"1":"log_ky_raw","2":"Log of Capital-Output Ratio","3":"numeric"},{"1":"log_h_raw","2":"Log of Human Capital","3":"numeric"},{"1":"log_tfp_raw","2":"Log of Total Factor Productivity","3":"numeric"},{"1":"log_GDPpc","2":"Trend (HP400) of log of Labor Productivity","3":"numeric"},{"1":"log_lp","2":"Trend (HP400) of log of GDP per capita","3":"numeric"},{"1":"log_ky","2":"Trend (HP400) of log of Capital-Output Ratio","3":"numeric"},{"1":"log_h","2":"Trend (HP400) of log of Human Capital","3":"numeric"},{"1":"log_tfp","2":"Trend (HP400) of log of Aggregate Efficiency","3":"numeric"},{"1":"region","2":"Regional group (Classification of the UN)","3":"factor"},{"1":"hi1990","2":"High income country (as of 2020, World Bank classification)","3":"factor"},{"1":"isocode","2":"ISO code from the PWT9.0","3":"factor"},{"1":"club_log_lp","2":"Initial clubs for trend (HP400) of log of Labor Productivity","3":"factor"},{"1":"finalclub_log_lp","2":"Final clubs for trend (HP400) of log of Labor Productivity","3":"factor"},{"1":"re_log_lp","2":"Relative Trend (HP400) of log of Labor Productivity","3":"numeric"},{"1":"club_log_ky","2":"Initial clubs for trend (HP400) of log of Capita-Output Ratio","3":"factor"},{"1":"finalclub_log_ky","2":"Final clubs for trend (HP400) of log of Capita-Output Ratio","3":"factor"},{"1":"re_log_ky","2":"Relative Trend (HP400) of log of Capital-Output Ratio","3":"numeric"},{"1":"club_log_h","2":"Initial clubs for trend (HP400) of log of Human Capital","3":"factor"},{"1":"finalclub_log_h","2":"Final clubs for trend (HP400) of log of Human Capital","3":"factor"},{"1":"re_log_h","2":"Relative Trend (HP400) of log of Human Capital","3":"numeric"},{"1":"club_log_tfp","2":"Initial clubs for trend (HP400) of log ofTotal Factor Productivity","3":"factor"},{"1":"finalclub_log_tfp","2":"Final clubs for trend (HP400) of log ofTotal Factor Productivity","3":"factor"},{"1":"re_log_tfp","2":"Relative Trend (HP400) of log of Aggregate Efficiency","3":"numeric"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[40]},"pages":{}}}
+{"columns":[{"label":["var_name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["var_def"],"name":[2],"type":["chr"],"align":["left"]},{"label":["type"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"country","2":"Standardized country name (from PWT)","3":"cs_id"},{"1":"year","2":"Year","3":"ts_id"},{"1":"Y","2":"GDP","3":"numeric"},{"1":"K","2":"Physical Capital","3":"numeric"},{"1":"pop","2":"Population","3":"numeric"},{"1":"L","2":"Labor Force","3":"numeric"},{"1":"s","2":"Years of Schooling","3":"numeric"},{"1":"alpha_it","2":"Variable Capital Share","3":"numeric"},{"1":"GDPpc","2":"GDP per capita","3":"numeric"},{"1":"lp","2":"Labor Productivity","3":"numeric"},{"1":"h","2":"Human Capital Index","3":"numeric"},{"1":"kl","2":"Capital per Worker","3":"numeric"},{"1":"kp","2":"Capital Productivity","3":"numeric"},{"1":"ky","2":"Capital-Output Ratio","3":"numeric"},{"1":"TFP","2":"Aggregate Efficiency","3":"numeric"},{"1":"log_GDPpc_raw","2":"Log of GDP per capita","3":"numeric"},{"1":"log_lp_raw","2":"Log of Labor Productivity","3":"numeric"},{"1":"log_ky_raw","2":"Log of Capital-Output Ratio","3":"numeric"},{"1":"log_h_raw","2":"Log of Human Capital","3":"numeric"},{"1":"log_tfp_raw","2":"Log of Total Factor Productivity","3":"numeric"},{"1":"log_GDPpc","2":"Trend (HP400) of log of Labor Productivity","3":"numeric"},{"1":"log_lp","2":"Trend (HP400) of log of GDP per capita","3":"numeric"},{"1":"log_ky","2":"Trend (HP400) of log of Capital-Output Ratio","3":"numeric"},{"1":"log_h","2":"Trend (HP400) of log of Human Capital","3":"numeric"},{"1":"log_tfp","2":"Trend (HP400) of log of Aggregate Efficiency","3":"numeric"},{"1":"region","2":"Regional group (Classification of the UN)","3":"factor"},{"1":"hi1990","2":"High income country (as of 2020, World Bank classification)","3":"factor"},{"1":"isocode","2":"ISO code from the PWT9.0","3":"factor"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[28]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
@@ -3050,41 +3086,44 @@ pre {font-size: 12px;}
 </div>
 <div id="interactive-exploration" class="section level1">
 <h1><span class="header-section-number">4</span> Interactive exploration</h1>
-<div id="initial" class="section level2">
-<h2><span class="header-section-number">4.1</span> Initial</h2>
+<div id="initial-exploration" class="section level2">
+<h2><span class="header-section-number">4.1</span> Initial exploration</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbIiMgUnVuIGl0IGluIHRoZSBjb25zb2xlIiwiRXhQYW5EKCIsIiAgZGYgPSBkYXQsIiwiIyAgZGZfZGVmID0gZGZfZGVmaW5pdGlvbnMsIiwiICBleHBvcnRfbmJfb3B0aW9uID0gVFJVRSwiLCIgIHRpdGxlID0gXCJEYXRhIGV4cGxvcmF0aW9uXCIsIiwiICBhYnN0cmFjdCA9IHBhc3RlKFwiRnVsbCBzYW1wbGVcIikiLCIgICAgKSJdfQ== -->
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Run it in the console</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">ExPanD</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="dt">df =</span> dat,</span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#  df_def = df_definitions,</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="dt">export_nb_option =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="dt">title =</span> <span class="st">&quot;Data exploration&quot;</span>,</span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="dt">abstract =</span> <span class="kw">paste</span>(<span class="st">&quot;Full sample&quot;</span>)</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    )</span></code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjpbIiMgUnVuIGl0IGluIHRoZSBjb25zb2xlIiwiRXhQYW5EKCIsIiAgZGYgPSBkYXQsIiwiICBkZl9kZWYgPSBkZl9kZWZpbml0aW9ucywiLCIgIGV4cG9ydF9uYl9vcHRpb24gPSBUUlVFLCIsIiAgdGl0bGUgPSBcIkRhdGEgZXhwbG9yYXRpb25cIiwiLCIgIGFic3RyYWN0ID0gcGFzdGUoXCJGdWxsIHNhbXBsZVwiKSIsIiAgICApIl19 -->
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Run it in the console</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">ExPanD</span>(</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="dt">df =</span> dat,</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="dt">df_def =</span> df_definitions,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="dt">export_nb_option =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="dt">title =</span> <span class="st">&quot;Data exploration&quot;</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="dt">abstract =</span> <span class="kw">paste</span>(<span class="st">&quot;Full sample&quot;</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    )</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="customized-display" class="section level2">
-<h2><span class="header-section-number">4.2</span> Customized display</h2>
+<div id="customized-exploration" class="section level2">
+<h2><span class="header-section-number">4.2</span> Customized exploration</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3VzdG9taXplZCA8LSByZWFkUkRTKFwiY3VzdG9taXplZC5SRFNcIilcbmBgYCJ9 -->
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>customized &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;customized.RDS&quot;</span>)</span></code></pre></div>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjpbIiMgUnVuIGl0IGluIHRoZSBjb25zb2xlIiwiRXhQYW5EKCIsIiAgZGYgPSBkYXQsIiwiIyAgZGZfZGVmID0gZGZfZGVmaW5pdGlvbnMsIiwiICBjb25maWdfbGlzdCA9IGN1c3RvbWl6ZWQsIiwiICBleHBvcnRfbmJfb3B0aW9uID0gVFJVRSwiLCIgIHRpdGxlID0gXCJEYXRhIGV4cGxvcmF0aW9uXCIsIiwiICBhYnN0cmFjdCA9IHBhc3RlKFwiRnVsbCBzYW1wbGVcIikiLCIgICAgKSJdfQ== -->
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Run it in the console</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">ExPanD</span>(</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="dt">df =</span> dat,</span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#  df_def = df_definitions,</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="dt">config_list =</span> customized,</span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="dt">export_nb_option =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="dt">title =</span> <span class="st">&quot;Data exploration&quot;</span>,</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="dt">abstract =</span> <span class="kw">paste</span>(<span class="st">&quot;Full sample&quot;</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>    )</span></code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjpbIiMgUnVuIGl0IGluIHRoZSBjb25zb2xlIiwiRXhQYW5EKCIsIiAgZGYgPSBkYXQsIiwiICBkZl9kZWYgPSBkZl9kZWZpbml0aW9ucywiLCIgIGNvbmZpZ19saXN0ID0gY3VzdG9taXplZCwiLCIgIGV4cG9ydF9uYl9vcHRpb24gPSBUUlVFLCIsIiAgdGl0bGUgPSBcIkRhdGEgZXhwbG9yYXRpb25cIiwiLCIgIGFic3RyYWN0ID0gcGFzdGUoXCJGdWxsIHNhbXBsZVwiKSIsIiAgICApIl19 -->
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Run it in the console</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">ExPanD</span>(</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="dt">df =</span> dat,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="dt">df_def =</span> df_definitions,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="dt">config_list =</span> customized,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="dt">export_nb_option =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="dt">title =</span> <span class="st">&quot;Data exploration&quot;</span>,</span>
+<span id="cb9-8"><a href="#cb9-8"></a>  <span class="dt">abstract =</span> <span class="kw">paste</span>(<span class="st">&quot;Full sample&quot;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    )</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -3093,7 +3132,7 @@ pre {font-size: 12px;}
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF0YSBleHBsb3JhdGlvbiIKc3VidGl0bGU6ICJMYWJvciBwcm9kdWN0aXZpdHkgYW5kIGl0cyBwcm94aW1hdGUgZGV0ZXJtaW5hbnRzIgphdXRob3I6ICIiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgY29kZV9kb3dubG9hZDogdHJ1ZQogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgICB0b2M6IHRydWUKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBmYWxzZQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQogICAgdG9jX2RlcHRoOiA0CiAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgIGNvZGVfZm9sZGluZzogInNob3ciCiAgICB0aGVtZTogImNvc21vIgogICAgaGlnaGxpZ2h0OiAibW9ub2Nocm9tZSIKICBodG1sX25vdGVib29rOgogICAgY29kZV9mb2xkaW5nOiAic2hvdyIKICAgIGhpZ2hsaWdodDogIm1vbm9jaHJvbWUiCiAgICBudW1iZXJfc2VjdGlvbnM6IHllcwogICAgdGhlbWU6ICJjb3NtbyIKICAgIHRvYzogeWVzCiAgICB0b2NfZGVwdGg6IDQKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBubwogICAgICBzbW9vdGhfc2Nyb2xsOiBubwogIHBkZl9kb2N1bWVudDogZGVmYXVsdAogIHdvcmRfZG9jdW1lbnQ6IGRlZmF1bHQKICBnaXRodWJfZG9jdW1lbnQ6IGRlZmF1bHQKLS0tCgo8c3R5bGU+CmgxLnRpdGxlIHtmb250LXNpemU6IDE4cHQ7IGNvbG9yOiBEYXJrQmx1ZTt9IApib2R5LCBoMSwgaDIsIGgzLCBoNCB7Zm9udC1mYW1pbHk6ICJQYWxhdGlubyIsIHNlcmlmO30KYm9keSB7Zm9udC1zaXplOiAxMnB0O30KLyogSGVhZGVycyAqLwpoMSxoMixoMyxoNCxoNSxoNntmb250LXNpemU6IDE0cHQ7IGNvbG9yOiAjMDAwMDhCO30KYm9keSB7Y29sb3I6ICMzMzMzMzM7fQphLCBhOmhvdmVyIHtjb2xvcjogIzhCM0E2Mjt9CnByZSB7Zm9udC1zaXplOiAxMnB4O30KPC9zdHlsZT4KCgojIExpYnJhcmllcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9VH0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KAogIGVjaG8gPSBUUlVFLAogIG1lc3NhZ2UgPSBGQUxTRSwKICB3YXJuaW5nID0gRkFMU0UKKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShoYXZlbikKbGlicmFyeShFeFBhbkRhUikgICAgICAjIGV4cGxvcmUgcGFuZWwgZGF0YSBpbnRlcmFjdGl2ZWx5ICAKbGlicmFyeShEVCkgICAgICAgICAgICAjIGludGVyYWN0aXZlIHRhYmxlcwpsaWJyYXJ5KHBtZHBseXIpICAgICAgICMgbWFuYWdpbmcgcGFuZWwgYW5kIGhpZXJhcmNoaWNhbCBkYXRhCmxpYnJhcnkocGFuZWxyKQpsaWJyYXJ5KGdnYW5pbWF0ZSkgICAgICMgYW5pbWF0ZWQKdGhlbWVfc2V0KHRoZW1lX21pbmltYWwoKSkKCiMgQ2hhbmdlIHRoZSBwcmVzZW50YXRpb24gb2YgZGVjaW1hbCBudW1iZXJzIHRvIDQgYW5kIGF2b2lkIHNjaWVudGlmaWMgbm90YXRpb24Kb3B0aW9ucyhwcm9tcHQ9IlI+ICIsIGRpZ2l0cz02LCBzY2lwZW49NykKYGBgCgoKIyBJbXBvcnQgZGF0YQoKYGBge3J9CmRhdCA8LSByZWFkX3N0YXRhKCJkYXQuZHRhIikgCmBgYAoKClNlbGVjdCBhbGwgdmFyaWFibGVzIGJ1dCBpZAoKYGBge3J9CmRhdCA8LSBkYXQgJT4lIAogIHNlbGVjdCgKICAgIC1pZAogICkKYGBgCgoKIyBEZWZpbml0aW9ucyBvZiB2YXJpYWJsZXMKCgpgYGB7cn0KZGZfZGVmaW5pdGlvbnMgPC0gcmVhZF9jc3YoImRhdC1kZWZpbml0aW9ucy5jc3YiKSAKZGZfZGVmaW5pdGlvbnMgCmBgYAoKIyBJbnRlcmFjdGl2ZSBleHBsb3JhdGlvbgoKIyMgSW5pdGlhbAoKYGBge3IgZXZhbD1GQUxTRSwgaW5jbHVkZT1UfQojIFJ1biBpdCBpbiB0aGUgY29uc29sZQpFeFBhbkQoCiAgZGYgPSBkYXQsCiMgIGRmX2RlZiA9IGRmX2RlZmluaXRpb25zLAogIGV4cG9ydF9uYl9vcHRpb24gPSBUUlVFLAogIHRpdGxlID0gIkRhdGEgZXhwbG9yYXRpb24iLAogIGFic3RyYWN0ID0gcGFzdGUoIkZ1bGwgc2FtcGxlIikKICAgICkKYGBgCgoKCiMjIEN1c3RvbWl6ZWQgZGlzcGxheQoKYGBge3J9CmN1c3RvbWl6ZWQgPC0gcmVhZFJEUygiY3VzdG9taXplZC5SRFMiKQpgYGAKCgoKYGBge3IgZXZhbD1GQUxTRSwgaW5jbHVkZT1UfQojIFJ1biBpdCBpbiB0aGUgY29uc29sZQpFeFBhbkQoCiAgZGYgPSBkYXQsCiMgIGRmX2RlZiA9IGRmX2RlZmluaXRpb25zLAogIGNvbmZpZ19saXN0ID0gY3VzdG9taXplZCwKICBleHBvcnRfbmJfb3B0aW9uID0gVFJVRSwKICB0aXRsZSA9ICJEYXRhIGV4cGxvcmF0aW9uIiwKICBhYnN0cmFjdCA9IHBhc3RlKCJGdWxsIHNhbXBsZSIpCiAgICApCmBgYAoKCgoKRU5ECgoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF0YSBleHBsb3JhdGlvbiIKc3VidGl0bGU6ICJMYWJvciBwcm9kdWN0aXZpdHkgYW5kIGl0cyBwcm94aW1hdGUgZGV0ZXJtaW5hbnRzIgphdXRob3I6ICIiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgY29kZV9kb3dubG9hZDogdHJ1ZQogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgICB0b2M6IHRydWUKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBmYWxzZQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQogICAgdG9jX2RlcHRoOiA0CiAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgIGNvZGVfZm9sZGluZzogInNob3ciCiAgICB0aGVtZTogImNvc21vIgogICAgaGlnaGxpZ2h0OiAibW9ub2Nocm9tZSIKICBodG1sX25vdGVib29rOgogICAgY29kZV9mb2xkaW5nOiAic2hvdyIKICAgIGhpZ2hsaWdodDogIm1vbm9jaHJvbWUiCiAgICBudW1iZXJfc2VjdGlvbnM6IHllcwogICAgdGhlbWU6ICJjb3NtbyIKICAgIHRvYzogeWVzCiAgICB0b2NfZGVwdGg6IDQKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBubwogICAgICBzbW9vdGhfc2Nyb2xsOiBubwogIHBkZl9kb2N1bWVudDogZGVmYXVsdAogIHdvcmRfZG9jdW1lbnQ6IGRlZmF1bHQKICBnaXRodWJfZG9jdW1lbnQ6IGRlZmF1bHQKLS0tCgo8c3R5bGU+CmgxLnRpdGxlIHtmb250LXNpemU6IDE4cHQ7IGNvbG9yOiBEYXJrQmx1ZTt9IApib2R5LCBoMSwgaDIsIGgzLCBoNCB7Zm9udC1mYW1pbHk6ICJQYWxhdGlubyIsIHNlcmlmO30KYm9keSB7Zm9udC1zaXplOiAxMnB0O30KLyogSGVhZGVycyAqLwpoMSxoMixoMyxoNCxoNSxoNntmb250LXNpemU6IDE0cHQ7IGNvbG9yOiAjMDAwMDhCO30KYm9keSB7Y29sb3I6ICMzMzMzMzM7fQphLCBhOmhvdmVyIHtjb2xvcjogIzhCM0E2Mjt9CnByZSB7Zm9udC1zaXplOiAxMnB4O30KPC9zdHlsZT4KCgojIExpYnJhcmllcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9VH0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KAogIGVjaG8gPSBUUlVFLAogIG1lc3NhZ2UgPSBGQUxTRSwKICB3YXJuaW5nID0gRkFMU0UKKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShFeFBhbkRhUikgICAgICAjIGV4cGxvcmUgcGFuZWwgZGF0YSBpbnRlcmFjdGl2ZWx5ICAKCnRoZW1lX3NldCh0aGVtZV9taW5pbWFsKCkpCgojIENoYW5nZSB0aGUgcHJlc2VudGF0aW9uIG9mIGRlY2ltYWwgbnVtYmVycyB0byA0IGFuZCBhdm9pZCBzY2llbnRpZmljIG5vdGF0aW9uCm9wdGlvbnMocHJvbXB0PSJSPiAiLCBkaWdpdHM9Niwgc2NpcGVuPTcpCmBgYAoKCiMgSW1wb3J0IGRhdGEKCmBgYHtyfQpkYXQgPC0gcmVhZF9jc3YoImRhdC5jc3YiKSAKYGBgCgpgYGB7cn0KZ2xpbXBzZShkYXQpCmBgYAoKCgpTZWxlY3QgYWxsIHZhcmlhYmxlcyBidXQgaWQKCmBgYHtyfQpkYXQgPC0gZGF0ICU+JSAKICBzZWxlY3QoCiAgICAtaWQKICApCmBgYAoKCiMgRGVmaW5pdGlvbnMgb2YgdmFyaWFibGVzCgoKYGBge3J9CmRmX2RlZmluaXRpb25zIDwtIHJlYWRfY3N2KCJkYXQtZGVmaW5pdGlvbnMuY3N2IikgCmRmX2RlZmluaXRpb25zIApgYGAKCiMgSW50ZXJhY3RpdmUgZXhwbG9yYXRpb24KCiMjIEluaXRpYWwgZXhwbG9yYXRpb24KCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VH0KIyBSdW4gaXQgaW4gdGhlIGNvbnNvbGUKRXhQYW5EKAogIGRmID0gZGF0LAogIGRmX2RlZiA9IGRmX2RlZmluaXRpb25zLAogIGV4cG9ydF9uYl9vcHRpb24gPSBUUlVFLAogIHRpdGxlID0gIkRhdGEgZXhwbG9yYXRpb24iLAogIGFic3RyYWN0ID0gcGFzdGUoIkZ1bGwgc2FtcGxlIikKICAgICkKYGBgCgoKCiMjIEN1c3RvbWl6ZWQgZXhwbG9yYXRpb24KCmBgYHtyfQpjdXN0b21pemVkIDwtIHJlYWRSRFMoImN1c3RvbWl6ZWQuUkRTIikKYGBgCgoKCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VH0KIyBSdW4gaXQgaW4gdGhlIGNvbnNvbGUKRXhQYW5EKAogIGRmID0gZGF0LAogIGRmX2RlZiA9IGRmX2RlZmluaXRpb25zLAogIGNvbmZpZ19saXN0ID0gY3VzdG9taXplZCwKICBleHBvcnRfbmJfb3B0aW9uID0gVFJVRSwKICB0aXRsZSA9ICJEYXRhIGV4cGxvcmF0aW9uIiwKICBhYnN0cmFjdCA9IHBhc3RlKCJGdWxsIHNhbXBsZSIpCiAgICApCmBgYAoKCgoKRU5ECgoKCgo=</div>
 
 
 </div>

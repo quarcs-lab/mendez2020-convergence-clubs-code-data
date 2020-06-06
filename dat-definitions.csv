@@ -27,15 +27,3 @@ log_tfp,Trend (HP400) of log of Aggregate Efficiency,numeric
 region,Regional group (Classification of the UN),factor
 hi1990,"High income country (as of 2020, World Bank classification)",factor
 isocode,ISO code from the PWT9.0,factor
-club_log_lp       ,Initial clubs for trend (HP400) of log of Labor Productivity,factor
-finalclub_log_lp  ,Final clubs for trend (HP400) of log of Labor Productivity,factor
-re_log_lp         ,Relative Trend (HP400) of log of Labor Productivity,numeric
-club_log_ky       ,Initial clubs for trend (HP400) of log of Capita-Output Ratio,factor
-finalclub_log_ky  ,Final clubs for trend (HP400) of log of Capita-Output Ratio,factor
-re_log_ky         ,Relative Trend (HP400) of log of Capital-Output Ratio,numeric
-club_log_h        ,Initial clubs for trend (HP400) of log of Human Capital,factor
-finalclub_log_h   ,Final clubs for trend (HP400) of log of Human Capital,factor
-re_log_h          ,Relative Trend (HP400) of log of Human Capital,numeric
-club_log_tfp      ,Initial clubs for trend (HP400) of log ofTotal Factor Productivity,factor
-finalclub_log_tfp ,Final clubs for trend (HP400) of log ofTotal Factor Productivity,factor
-re_log_tfp ,Relative Trend (HP400) of log of Aggregate Efficiency,numeric

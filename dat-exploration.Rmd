@@ -51,12 +51,8 @@ knitr::opts_chunk$set(
   warning = FALSE
 )
 library(tidyverse)
-library(haven)
 library(ExPanDaR)      # explore panel data interactively  
-library(DT)            # interactive tables
-library(pmdplyr)       # managing panel and hierarchical data
-library(panelr)
-library(gganimate)     # animated
+
 theme_set(theme_minimal())
 
 # Change the presentation of decimal numbers to 4 and avoid scientific notation
@@ -67,8 +63,13 @@ options(prompt="R> ", digits=6, scipen=7)
 # Import data
 
 ```{r}
-dat <- read_stata("dat.dta") 
+dat <- read_csv("dat.csv") 
 ```
+
+```{r}
+glimpse(dat)
+```
+
 
 
 Select all variables but id
@@ -91,13 +92,13 @@ df_definitions
 
 # Interactive exploration
 
-## Initial
+## Initial exploration
 
 ```{r eval=FALSE, include=T}
 # Run it in the console
 ExPanD(
   df = dat,
-#  df_def = df_definitions,
+  df_def = df_definitions,
   export_nb_option = TRUE,
   title = "Data exploration",
   abstract = paste("Full sample")
@@ -106,7 +107,7 @@ ExPanD(
 
 
 
-## Customized display
+## Customized exploration
 
 ```{r}
 customized <- readRDS("customized.RDS")
@@ -118,7 +119,7 @@ customized <- readRDS("customized.RDS")
 # Run it in the console
 ExPanD(
   df = dat,
-#  df_def = df_definitions,
+  df_def = df_definitions,
   config_list = customized,
   export_nb_option = TRUE,
   title = "Data exploration",
