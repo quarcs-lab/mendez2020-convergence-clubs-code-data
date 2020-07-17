@@ -12,7 +12,7 @@ The code below installs the convergence clubs package and its dependencies. It i
 ***************** Install packages*********************
 *-------------------------------------------------------
 * Install the convergence clubs package
-net install st0503_1.pkg 
+net install st0503 
 * Install package dependencies
 ssc install moremata
 *-------------------------------------------------------
