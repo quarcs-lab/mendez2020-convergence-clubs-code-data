@@ -161,48 +161,40 @@ Given the extended dataset, the code below plots multiple figures and export the
 *-------------------------------------------------------
 ***************** Plot the clubs  *********************
 *-------------------------------------------------------
-** (1) All transition paths
+** All lines
 
-xtline re_${xVar}, overlay legend(off) scale(1.6)  ytitle("${xVarLabel}",
-size(small)) yscale(lstyle(none)) ylabel(, noticks labcolor(gs10))
-xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  xtitle("")
-name(allLines, replace)
+xtline re_${xVar}, overlay legend(off) scale(1.6)  ytitle("${xVarLabel}", size(small)) yscale(lstyle(none)) ylabel(, noticks labcolor(gs10)) xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  xtitle("") name(allLines, replace)
 
-graph save   "${dataSet}_allLines.gph", replace
-graph export "${dataSet}_allLines.pdf", replace
+graph save   "../results/${dataSet}_allLines.gph", replace
+graph export "../results/${dataSet}_allLines.pdf", replace
 
-** (2) Paths for each club
+** Indentified Clubs
 
 summarize finalclub_${xVar}
 return list
 scalar nunberOfClubs = r(max)
 
 forval i=1/`=nunberOfClubs' {
-    xtline re_${xVar} if finalclub_${xVar} == `i', overlay title("Club `i'",
-    size(small)) legend(off) scale(1.5) yscale(lstyle(none))
-    ytitle("${xVarLabel}", size(small)) ylabel(, noticks labcolor(gs10))
-    xtitle("") xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))
-    name(club`i', replace)
+    xtline re_${xVar} if finalclub_${xVar} == `i', overlay title("Club `i'", size(small)) legend(off) scale(1.5) yscale(lstyle(none))  ytitle("${xVarLabel}", size(small)) ylabel(, noticks labcolor(gs10)) xtitle("") xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  name(club`i', replace)
     local graphs `graphs' club`i'
-    }
+}
 graph combine `graphs', ycommon
-graph save   "${dataSet}_clubsLines.gph", replace
-graph export "${dataSet}_clubsLines.pdf", replace
+graph save   "../results/${dataSet}_clubsLines.gph", replace
+graph export "../results/${dataSet}_clubsLines.pdf", replace
 
-** (3) Within-club averages
+** Within-club averages
 
 collapse (mean) re_${xVar}, by(finalclub_${xVar} ${timeUnit})
 xtset finalclub_${xVar} ${timeUnit}
 rename finalclub_${xVar} Club
-xtline re_${xVar}, overlay scale(1.6) ytitle("${xVarLabel}", size(small)) 
-yscale(lstyle(none)) ylabel(, noticks labcolor(gs10)) xscale(lstyle(none)) 
-xlabel(, noticks labcolor(gs10))  xtitle("") name(clubsAverages, replace)
+xtline re_${xVar}, overlay scale(1.6) ytitle("${xVarLabel}", size(small)) yscale(lstyle(none)) ylabel(, noticks labcolor(gs10)) xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  xtitle("") name(clubsAverages, replace)
 
-graph save   "${dataSet}_clubsAverages.gph", replace
-graph export "${dataSet}_clubsAverages.pdf", replace
+graph save   "../results/${dataSet}_clubsAverages.gph", replace
+graph export "../results/${dataSet}_clubsAverages.pdf", replace
 
 clear
-use "${dataSet}_clubs.dta"
+use "../results/${dataSet}_clubs.dta"
+
 *-------------------------------------------------------
 ```
 
