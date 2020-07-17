@@ -1,6 +1,8 @@
 ## Convergence test and identification of clubs using Stata
 
-@Du2017 introduced a Stata package to perform the econometric convergence analysis and club clustering algorithm of @Phillips2007.
+> [Video Tutorial]()
+
+[Du (2017)](https://www.stata-journal.com/article.html?article=st0503) introduced a Stata package to perform the econometric convergence analysis and club clustering algorithm of [Phillips and Sul (2007)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2007.00811.x).
 Although the package is well documented and easy to use, it does not include commands to create figures or export tables of results.
 In what follows, the basic use of the package is described with some additional pieces of code to automate the creation of figures and export of results.^[Code and data are available at https://bit.ly/mendez2020code or https://github.com/quarcs-lab/mendez2020-convergence-clubs-code-data] 
 
