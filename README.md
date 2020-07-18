@@ -25,7 +25,7 @@ Testing for economic convergence across countries has been a central issue in th
 
 | Tutorials                                                                           | Download datasets                                                                                                        |
 |-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| [Video Tutorial]()                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
+| [Video Tutorial](https://youtu.be/FO8Ngl57HRQ)                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
 | [Convergence clubs analysis of developed countries using Stata](assets/tutorial-hiYes_log_lp.zip?raw=true)| [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true); [See dataset definitions](/dat-definitions.csv)                                                 |
 | [Explore the data using Python in Google Colab]()                                   | [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                                                |
 | [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                                              |
