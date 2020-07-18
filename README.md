@@ -1,12 +1,13 @@
 ![](pics/BookCoverWithPics.jpg)
 
-|                                  [Video Tutorial]()                                 |                                 [Download full dataset](assets/dat.csv.zip?raw=true)                                 |
-| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) |                        [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)                       |
-|                  [Explore the data using Python in Google Colab]()                  |                         [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                        |
-|                                                                                     |                        [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                       |
-|                                                                                     |       [Download example Stata dataset: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)      |
+|                                      Tutorials                                      |                                                     Download datasets                                                    |
+|:-----------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
+| [Video Tutorial]()                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
+| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)                                                  |
+| [Explore the data using Python in Google Colab]()                                   | [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                                                |
+|                                                                                     | [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                                              |
+|                                                                                     | [Download example Stata dataset: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)         |
 |                                                                                     | [Download example Stata code: Labor productivity in developed countries](assets/RUN-PSclubs-hiYes_log_lpDO.zip?raw=true) |
-
 
 ## Tutorial: Convergence test and identification of clubs using Stata
 
