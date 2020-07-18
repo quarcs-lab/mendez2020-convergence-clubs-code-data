@@ -1,10 +1,13 @@
+![](pics/BookCoverWithPics.jpg)
+
+
 ## Convergence test and identification of clubs using Stata
 
 > [Video Tutorial]()
 
 [Du (2017)](https://www.stata-journal.com/article.html?article=st0503) introduced a Stata package to perform the econometric convergence analysis and club clustering algorithm of [Phillips and Sul (2007)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2007.00811.x).
 Although the package is well documented and easy to use, it does not include commands to create figures or export tables of results.
-In what follows, the basic use of the package is described with some additional pieces of code to automate the creation of figures and export of results.^[Code and data are available at https://bit.ly/mendez2020code or https://github.com/quarcs-lab/mendez2020-convergence-clubs-code-data] 
+In what follows, the basic use of the package is described with some additional pieces of code to automate the creation of figures and export of results.^[Code and data are available at https://bit.ly/mendez2020code or https://github.com/quarcs-lab/mendez2020-convergence-clubs-code-data]
 
 
 The code below installs the convergence clubs package and its dependencies. It is important to note that Stata 12.1 or higher is needed to run the convergence clubs package. In addition, to export the results to excel, Stata 14.2 or higher is needed to use the `putexcel` command. Finally, note that this installation should only need to be done once.
@@ -21,7 +24,7 @@ ssc install moremata
 *-------------------------------------------------------
 ```
 
-After installing the package, we need to define some global (macro) parameters such as the name of the dataset (for example, `hiYes_log_lp`), the main variable to be studied (for example, `log_lp`), the label of that variable (for example, `Labor Productivity`), the type of cross-sectional unit (for example, `country`), and the type of temporal unit (for example,`year`). Users of this code should carefully check these five parameters as the next steps crucially depend on them to work correctly. 
+After installing the package, we need to define some global (macro) parameters such as the name of the dataset (for example, `hiYes_log_lp`), the main variable to be studied (for example, `log_lp`), the label of that variable (for example, `Labor Productivity`), the type of cross-sectional unit (for example, `country`), and the type of temporal unit (for example,`year`). Users of this code should carefully check these five parameters as the next steps crucially depend on them to work correctly.
 
 ```
 *-------------------------------------------------------
@@ -45,7 +48,7 @@ global timeUnit year
 *-------------------------------------------------------
 ```
 
-To have a record of the written commands and results (excluding the display of figures), let us start a log file. The name of this file is automatically captured from the previously defined parameters. 
+To have a record of the written commands and results (excluding the display of figures), let us start a log file. The name of this file is automatically captured from the previously defined parameters.
 
 ```
 *-------------------------------------------------------
@@ -55,7 +58,7 @@ log using "${dataSet}_clubs.txt", text replace
 *-------------------------------------------------------
 ```
 
-Next, from the current working directory,  we load the dataset, which is in a .dta format, and set the structure of the data. Again, we do not have to modify anything from this code as long as the global parameters are correctly defined. 
+Next, from the current working directory,  we load the dataset, which is in a .dta format, and set the structure of the data. Again, we do not have to modify anything from this code as long as the global parameters are correctly defined.
 
 ```
 *-------------------------------------------------------
@@ -81,7 +84,7 @@ The next piece of code is the most important one of the entire package. It  runs
 * (1) Run log-t regression
 putexcel set "${dataSet}_test.xlsx", sheet(logtTest) replace
   logtreg ${xVar},  kq(0.333)
-    
+
 ereturn list
 matrix result0 = e(res)
 putexcel A1 = matrix(result0), names nformat("#.##") overwritefmt
@@ -99,7 +102,7 @@ putexcel A1 = matrix(result1), names nformat("#.##") overwritefmt
 * (3) Run merge algorithm
 putexcel set "${dataSet}_test.xlsx", sheet(mergingClusters) modify
   scheckmerge ${xVar},  kq(0.333) club(club_${xVar})
-    
+
 matrix b=e(bm)
 matrix t=e(tm)
 matrix result2=(b \ t)
@@ -108,7 +111,7 @@ putexcel A1 = matrix(result2), names nformat("#.##") overwritefmt
 
 * (4) List final clusters
 putexcel set "${dataSet}_test.xlsx", sheet(finalClusters) modify
-  imergeclub ${xVar}, name(${csUnitName}) kq(0.333) club(club_${xVar}) 
+  imergeclub ${xVar}, name(${csUnitName}) kq(0.333) club(club_${xVar})
   gen(finalclub_${xVar})
 
 matrix b=e(bm)
@@ -198,7 +201,7 @@ use "../results/${dataSet}_clubs.dta"
 *-------------------------------------------------------
 ```
 
-The code below exports the list of countries and their club membership to a `.csv` file. This list can be used as a handy reference in the appendix section of a publication. 
+The code below exports the list of countries and their club membership to a `.csv` file. This list can be used as a handy reference in the appendix section of a publication.
 
 ```
 *-------------------------------------------------------
@@ -213,7 +216,7 @@ export delimited using "${dataSet}_clubsList.csv", replace
 *-------------------------------------------------------
 ```
 
-Finally, the code below closes the log file. 
+Finally, the code below closes the log file.
 
 ```
 *-------------------------------------------------------
@@ -222,4 +225,3 @@ Finally, the code below closes the log file.
 log close
 *-------------------------------------------------------
 ```
-
