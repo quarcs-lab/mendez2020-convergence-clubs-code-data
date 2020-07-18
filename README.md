@@ -24,7 +24,7 @@ The code below installs the convergence clubs package and its dependencies. It i
 *-------------------------------------------------------
 * Install the convergence clubs package
 findit st0503_1
-net install st0503_1.pkg
+net install st0503_1, from (http://www.stata-journal.com/software/sj19-1)
 * Install package dependencies
 ssc install moremata
 *-------------------------------------------------------
