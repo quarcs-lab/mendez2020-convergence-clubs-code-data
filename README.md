@@ -1,13 +1,34 @@
 ![](assets/BookCoverWithPics.jpg)
 
+## About the book
+
+Testing for economic convergence across countries has been a central issue in the literature of economic growth and development. This book introduces a modern framework to study the cross-country convergence dynamics of labor productivity and its proximate sources: capital accumulation and aggregate efficiency. In particular, recent convergence dynamics of developed as well as developing countries are evaluated through the lens of a non-linear dynamic factor model and a clustering algorithm for panel data. This framework allows us to examine key economic phenomena such as technological heterogeneity and multiple equilibria. In this context, the book provides a succinct review of the recent club convergence literature, a comparative view of developed and developing countries, and a tutorial on how to implement the club convergence framework in the statistical software Stata. These three features will help graduate students and researchers catch up with the latest developments and methodological implementations of the club convergence literature.
+
+- Buy the ebook
+- Buy the book
+
+## Table of contents
+
+1.  Introduction and overview
+2.  Measuring labor productivity and its proximate sources
+3.  A modern framework to study convergence
+4.	Convergence clubs in labor productivity
+5.  Convergence clubs in capital accumulation
+6.  Convergence clubs in aggregate efficiency
+7.  Concluding remarks and new research directions
+
+
+
+
+
 | Tutorials                                                                           | Download datasets                                                                                                        |
 |-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | [Video Tutorial]()                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
-| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true); [See dataset definitions](/dat-definitions.csv)                                                 |
+| [Convergence clubs analysis of developed countries using Stata](assets/tutorial-hiYes_log_lp.zip?raw=true)| [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true); [See dataset definitions](/dat-definitions.csv)                                                 |
 | [Explore the data using Python in Google Colab]()                                   | [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                                                |
-|                                                                                     | [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                                              |
-|                                                                                     | [Download example Stata dataset: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)         |
-|                                                                                     | [Download example Stata code: Labor productivity in developed countries](assets/RUN-PSclubs-hiYes_log_lpDO.zip?raw=true) |
+| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                                              |
+
+
 
 ## Tutorial: Convergence test and identification of clubs using Stata
 
