@@ -3,7 +3,7 @@
 | Tutorials                                                                           | Download datasets                                                                                                        |
 |-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | [Video Tutorial]()                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
-| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)                                                  |
+| [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true); [See dataset definitions](/dat-definitions)                                                 |
 | [Explore the data using Python in Google Colab]()                                   | [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                                                |
 |                                                                                     | [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)                                              |
 |                                                                                     | [Download example Stata dataset: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)         |
