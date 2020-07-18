@@ -1,7 +1,7 @@
 ![](pics/BookCoverWithPics.jpg)
 
-|                                      Tutorials                                      |                                                     Download datasets                                                    |
-|:-----------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
+| Tutorials                                                                           | Download datasets                                                                                                        |
+|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | [Video Tutorial]()                                                                  | [Download full dataset](assets/dat.csv.zip?raw=true)                                                                     |
 | [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320) | [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)                                                  |
 | [Explore the data using Python in Google Colab]()                                   | [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)                                                |
