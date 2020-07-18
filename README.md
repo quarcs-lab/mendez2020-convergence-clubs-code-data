@@ -3,21 +3,21 @@
 
   > [Video Tutorial]()
 
-  > [Download full dataset](assets/dat.csv.zip?raw=true)
+  > [Download CSV full dataset](assets/dat.csv.zip?raw=true)
 
-  > [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)
+  > [Download CSV dataset definitions](assets/dat-definitions.csv.zip?raw=true)
 
-  > [Download dataset of developed countries](assets/dat_hiNo.zip?raw=true)
+  > [Download R dataset of developed countries](assets/dat_hiNo.zip?raw=true)
 
-  > [Download dataset of developing countries](assets/dat_hiYes.zip?raw=true)
+  > [Download R dataset of developing countries](assets/dat_hiYes.zip?raw=true)
 
-  > [Download example data: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)
+  > [Download example Stata data: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)
 
-  > [Download example code: Labor productivity in developed countries](assets/RUN-PSclubs-hiYes_log_lpDO.zip?raw=true)
+  > [Download example Stata code: Labor productivity in developed countries](assets/RUN-PSclubs-hiYes_log_lpDO.zip?raw=true)
 
-  > [Explore the data in R Studio Cloud](https://rstudio.cloud/project/1358320)
+  > [Explore the data using R in R Studio Cloud](https://rstudio.cloud/project/1358320)
 
-  > [Explore the data in Google Colab using Python]()
+  > [Explore the data using Python in Google Colab]()
 
 ## Tutorial: Convergence test and identification of clubs using Stata
 
