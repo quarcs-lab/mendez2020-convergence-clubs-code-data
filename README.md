@@ -1,9 +1,17 @@
 ![](pics/BookCoverWithPics.jpg)
 
 
-## Convergence test and identification of clubs using Stata
-
 > [Video Tutorial]()
+> [Download full dataset](assets/dat.csv.zip?raw=true)
+> [Download dataset definitions](assets/dat-definitions.csv.zip?raw=true)
+> [Download dataset of developed countries](assets/dat_hiNo.zip?raw=true)
+> [Download dataset of developing countries](assets/dat_hiYes.zip?raw=true)
+> [Download example data: Labor productivity in developed countries](assets/hiYes_log_lpDTA.zip?raw=true)
+> [Download example code: Labor productivity in developed countries](assets/RUN-PSclubs-hiYes_log_lpDO.zip?raw=true)
+> [Explore the data in R Studio Cloud](https://rstudio.cloud/project/1358320)
+> [Explore the data in Google Colab using Python]()
+
+## Tutorial: Convergence test and identification of clubs using Stata
 
 [Du (2017)](https://www.stata-journal.com/article.html?article=st0503) introduced a Stata package to perform the econometric convergence analysis and club clustering algorithm of [Phillips and Sul (2007)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2007.00811.x).
 Although the package is well documented and easy to use, it does not include commands to create figures or export tables of results.
@@ -83,7 +91,7 @@ The next piece of code is the most important one of the entire package. It  runs
 *-------------------------------------------------------
 * (1) Run log-t regression
 putexcel set "${dataSet}_test.xlsx", sheet(logtTest) replace
-  logtreg ${xVar},  kq(0.333)
+    logtreg ${xVar},  kq(0.333)
 
 ereturn list
 matrix result0 = e(res)
@@ -91,8 +99,7 @@ putexcel A1 = matrix(result0), names nformat("#.##") overwritefmt
 
 * (2) Run clustering algorithm
 putexcel set "${dataSet}_test.xlsx", sheet(initialClusters) modify
-  psecta ${xVar}, name(${csUnitName}) kq(0.333) gen(club_${xVar})
-
+    psecta ${xVar}, name(${csUnitName}) kq(0.333) gen(club_${xVar})
 matrix b=e(bm)
 matrix t=e(tm)
 matrix result1=(b \ t)
@@ -101,8 +108,7 @@ putexcel A1 = matrix(result1), names nformat("#.##") overwritefmt
 
 * (3) Run merge algorithm
 putexcel set "${dataSet}_test.xlsx", sheet(mergingClusters) modify
-  scheckmerge ${xVar},  kq(0.333) club(club_${xVar})
-
+    scheckmerge ${xVar},  kq(0.333) club(club_${xVar})
 matrix b=e(bm)
 matrix t=e(tm)
 matrix result2=(b \ t)
@@ -111,14 +117,13 @@ putexcel A1 = matrix(result2), names nformat("#.##") overwritefmt
 
 * (4) List final clusters
 putexcel set "${dataSet}_test.xlsx", sheet(finalClusters) modify
-  imergeclub ${xVar}, name(${csUnitName}) kq(0.333) club(club_${xVar})
-  gen(finalclub_${xVar})
-
+    imergeclub ${xVar}, name(${csUnitName}) kq(0.333) club(club_${xVar}) gen(finalclub_${xVar})
 matrix b=e(bm)
 matrix t=e(tm)
 matrix result3=(b \ t)
 matlist result3, border(rows) rowtitle("log(t)") format(%9.3f) left(4)
 putexcel A1 = matrix(result3), names nformat("#.##") overwritefmt
+
 *-------------------------------------------------------
 ```
 
@@ -148,7 +153,7 @@ sort id ${timeUnit}
 drop if id == 999999
 rm "temporary1.dta"
 
-* Order variables
+* order variables
 order ${csUnitName}, before(${timeUnit})
 order id, before(${csUnitName})
 
@@ -168,8 +173,8 @@ Given the extended dataset, the code below plots multiple figures and export the
 
 xtline re_${xVar}, overlay legend(off) scale(1.6)  ytitle("${xVarLabel}", size(small)) yscale(lstyle(none)) ylabel(, noticks labcolor(gs10)) xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  xtitle("") name(allLines, replace)
 
-graph save   "../results/${dataSet}_allLines.gph", replace
-graph export "../results/${dataSet}_allLines.pdf", replace
+graph save   "${dataSet}_allLines.gph", replace
+graph export "${dataSet}_allLines.pdf", replace
 
 ** Indentified Clubs
 
@@ -182,8 +187,8 @@ forval i=1/`=nunberOfClubs' {
     local graphs `graphs' club`i'
 }
 graph combine `graphs', ycommon
-graph save   "../results/${dataSet}_clubsLines.gph", replace
-graph export "../results/${dataSet}_clubsLines.pdf", replace
+graph save   "${dataSet}_clubsLines.gph", replace
+graph export "${dataSet}_clubsLines.pdf", replace
 
 ** Within-club averages
 
@@ -192,11 +197,11 @@ xtset finalclub_${xVar} ${timeUnit}
 rename finalclub_${xVar} Club
 xtline re_${xVar}, overlay scale(1.6) ytitle("${xVarLabel}", size(small)) yscale(lstyle(none)) ylabel(, noticks labcolor(gs10)) xscale(lstyle(none)) xlabel(, noticks labcolor(gs10))  xtitle("") name(clubsAverages, replace)
 
-graph save   "../results/${dataSet}_clubsAverages.gph", replace
-graph export "../results/${dataSet}_clubsAverages.pdf", replace
+graph save   "${dataSet}_clubsAverages.gph", replace
+graph export "${dataSet}_clubsAverages.pdf", replace
 
 clear
-use "../results/${dataSet}_clubs.dta"
+use "${dataSet}_clubs.dta"
 
 *-------------------------------------------------------
 ```
@@ -210,6 +215,7 @@ The code below exports the list of countries and their club membership to a `.cs
 summarize ${timeUnit}
 scalar finalYear = r(max)
 keep if ${timeUnit} == `=finalYear'
+
 keep id ${csUnitName} finalclub_${xVar}
 sort finalclub_${xVar} ${csUnitName}
 export delimited using "${dataSet}_clubsList.csv", replace
