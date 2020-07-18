@@ -25,5 +25,5 @@ log_ky,Trend (HP400) of log of Capital-Output Ratio,numeric
 log_h,Trend (HP400) of log of Human Capital,numeric
 log_tfp,Trend (HP400) of log of Aggregate Efficiency,numeric
 region,Regional group (Classification of the UN),factor
-hi1990,"High income country (as of 2020, World Bank classification)",factor
+hi1990,"High income country (as of 1990, World Bank classification)",factor
 isocode,ISO code from the PWT9.0,factor
