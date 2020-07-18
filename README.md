@@ -6,8 +6,8 @@ Testing for economic convergence across countries has been a central issue in th
 
 - About the author: <https://carlos-mendez.rbind.io>
 - Related research: <https://quarcs-lab.rbind.io/>
-- Buy the ebook
-- Buy the book
+- Buy the ebook: TBA
+- Buy the book: TBA
 
 ## Table of contents
 
@@ -36,10 +36,10 @@ Testing for economic convergence across countries has been a central issue in th
 
 [Du (2017)](https://www.stata-journal.com/article.html?article=st0503) introduced a Stata package to perform the econometric convergence analysis and club clustering algorithm of [Phillips and Sul (2007)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2007.00811.x).
 Although the package is well documented and easy to use, it does not include commands to create figures or export tables of results.
-In what follows, the basic use of the package is described with some additional pieces of code to automate the creation of figures and export of results.^[Code and data are available at https://bit.ly/mendez2020code or https://github.com/quarcs-lab/mendez2020-convergence-clubs-code-data]
+In what follows, the basic use of the package is described with some additional pieces of code to automate the creation of figures and export of results.
 
 
-The code below installs the convergence clubs package and its dependencies. It is important to note that Stata 12.1 or higher is needed to run the convergence clubs package. In addition, to export the results to excel, Stata 14.2 or higher is needed to use the `putexcel` command. Finally, note that this installation should only need to be done once.
+The code below installs the convergence clubs package and its dependencies. It is important to note that Stata 12.1 or higher is needed to run the convergence clubs package. In addition, to export the results to excel, Stata 14.2 or higher is needed to use the `putexcel` command. Finally, note that this installation should only be done once.
 
 ```
 *-------------------------------------------------------
@@ -184,7 +184,7 @@ save "${dataSet}_clubs.dta", replace
 *-------------------------------------------------------
 ```
 
-Given the extended dataset, the code below plots multiple figures and export them as `.pdf` and `.gph` formats. There are three types of plots. First, the relative transition paths of all countries are plotted. This plot is useful as it provides a first graphical overview of dataset. Second, relative transition paths are plotted based on the club classification. Not only a plot for each club is created, but there is also a plot that compares all clubs using a common y-axis. Third, a plot based on within-club averages is also created. It is important to note that the colors and design of figures are based on the `plotplainblind` scheme.^[See @Bischof2017 for further information about the graphical scheme. This scheme can be installed by typing the following in the Stata console: `net install gr0070.pkg`. Activate the scheme by typing: `set scheme plotplainblind`.]     
+Given the extended dataset, the code below plots multiple figures and export them as `.pdf` and `.gph` formats. There are three types of plots. First, the relative transition paths of all countries are plotted. This plot is useful as it provides a first graphical overview of dataset. Second, relative transition paths are plotted based on the club classification. Not only a plot for each club is created, but there is also a plot that compares all clubs using a common y-axis. Third, a plot based on within-club averages is also created. It is important to note that the colors and design of figures are based on the `plotplainblind` scheme. See @Bischof2017 for further information about the graphical scheme. This scheme can be installed by typing the following in the Stata console: `net install gr0070, from(http://www.stata-journal.com/software/sj17-3)`. Activate the scheme by typing: `set scheme plotplainblind`.  
 
 ```
 *-------------------------------------------------------
