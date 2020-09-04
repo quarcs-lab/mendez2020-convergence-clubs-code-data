@@ -8,8 +8,8 @@ Testing for economic convergence across countries has been a central issue in th
 
 - About the author: <https://carlos-mendez.rbind.io>
 - Related research: <https://quarcs-lab.rbind.io>
-- Buy the ebook: TBA
-- Buy the book: TBA
+- [Buy the ebook](https://www.springer.com/gp/book/9789811586286)
+- [Buy the book](https://www.amazon.co.jp/Convergence-Clubs-Productivity-Proximate-Sources/dp/9811586284/ref=sr_1_1?dchild=1&keywords=%22Convergence+Clubs+in+Labor+Productivity+and+its+Proximate+Sources%22&qid=1599180007&sr=8-1) 
 
 ## Table of contents
 
