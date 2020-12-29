@@ -1,0 +1,137 @@
+---
+title: "Automatic data exploration"
+subtitle: "Labor productivity and its proximate determinants"
+author: ""
+output:
+  html_document:
+    code_download: true
+    df_print: paged
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 4
+    number_sections: true
+    code_folding: "show"
+    theme: "cosmo"
+    highlight: "monochrome"
+  html_notebook:
+    code_folding: "show"
+    highlight: "monochrome"
+    number_sections: yes
+    theme: "cosmo"
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+  pdf_document: default
+  word_document: default
+  github_document: default
+---
+
+<style>
+h1.title {font-size: 18pt; color: DarkBlue;} 
+body, h1, h2, h3, h4 {font-family: "Palatino", serif;}
+body {font-size: 12pt;}
+/* Headers */
+h1,h2,h3,h4,h5,h6{font-size: 14pt; color: #00008B;}
+body {color: #333333;}
+a, a:hover {color: #8B3A62;}
+pre {font-size: 12px;}
+</style>
+
+
+# Libraries
+
+```{r setup, include=T}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE
+)
+library(tidyverse)
+library(ExPanDaR)      # explore panel data interactively  
+
+theme_set(theme_minimal())
+
+# Change the presentation of decimal numbers to 4 and avoid scientific notation
+options(prompt="R> ", digits=6, scipen=7)
+```
+
+
+# Import data
+
+```{r}
+dat <- read_csv("dat.csv") 
+```
+
+```{r}
+glimpse(dat)
+```
+
+
+
+Select all variables but id
+
+```{r}
+dat <- dat %>% 
+  select(
+    -id
+  )
+```
+
+
+# Definitions of variables
+
+
+```{r}
+df_definitions <- read_csv("dat-definitions.csv") 
+df_definitions 
+```
+
+# Interactive exploration
+
+## Initial exploration
+
+```{r eval=FALSE, include=T}
+# Run it in the console
+ExPanD(
+  df = dat,
+  df_def = df_definitions,
+  export_nb_option = TRUE,
+  title = "Automatic data exploration",
+  abstract = paste("Full sample")
+    )
+```
+
+
+
+## Customized exploration
+
+```{r}
+customized <- readRDS("customized.RDS")
+```
+
+
+
+```{r eval=FALSE, include=T}
+# Run it in the console
+ExPanD(
+  df = dat,
+  df_def = df_definitions,
+  config_list = customized,
+  export_nb_option = TRUE,
+  title = "Customized data exploration",
+  abstract = paste("Full sample")
+    )
+```
+
+
+
+
+END
+
+
+
+

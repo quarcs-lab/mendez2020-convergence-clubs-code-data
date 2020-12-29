@@ -1,0 +1,29 @@
+var_name,var_def,type
+country,Standardized country name (from PWT),cs_id
+year,Year,ts_id
+Y,GDP,numeric
+K,Physical Capital,numeric
+pop,Population,numeric
+L,Labor Force,numeric
+s,Years of Schooling,numeric
+alpha_it,Variable Capital Share,numeric
+GDPpc,GDP per capita,numeric
+lp,Labor Productivity,numeric
+h,Human Capital Index,numeric
+kl,Capital per Worker,numeric
+kp,Capital Productivity,numeric
+ky,Capital-Output Ratio,numeric
+TFP,Aggregate Efficiency,numeric
+log_GDPpc_raw,Log of GDP per capita,numeric
+log_lp_raw,Log of Labor Productivity,numeric
+log_ky_raw,Log of Capital-Output Ratio,numeric
+log_h_raw,Log of Human Capital,numeric
+log_tfp_raw,Log of Total Factor Productivity,numeric
+log_GDPpc,Trend (HP400) of log of Labor Productivity,numeric
+log_lp,Trend (HP400) of log of GDP per capita,numeric
+log_ky,Trend (HP400) of log of Capital-Output Ratio,numeric
+log_h,Trend (HP400) of log of Human Capital,numeric
+log_tfp,Trend (HP400) of log of Aggregate Efficiency,numeric
+region,Regional group (Classification of the UN),factor
+hi1990,"High income country (as of 1990, World Bank classification)",factor
+isocode,ISO code from the PWT9.0,factor
