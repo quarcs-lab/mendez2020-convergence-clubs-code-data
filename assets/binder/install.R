@@ -6,3 +6,4 @@ install.packages("lemon", repos = "https://cloud.r-project.org/", dependencies=T
 install.packages("sf", repos = "https://cloud.r-project.org/", dependencies=TRUE)
 install.packages("tmap", repos = "https://cloud.r-project.org/", dependencies=TRUE)
 install.packages("ggthemes", repos = "https://cloud.r-project.org/", dependencies=TRUE)
+install.packages("ExPanDaR", repos = "https://cloud.r-project.org/", dependencies=TRUE)
