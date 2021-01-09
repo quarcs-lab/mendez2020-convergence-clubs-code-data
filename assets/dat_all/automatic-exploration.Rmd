@@ -63,7 +63,7 @@ options(prompt="R> ", digits=6, scipen=7)
 # Import data
 
 ```{r}
-dat <- read_csv("dat.csv") 
+dat <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat.csv")
 ```
 
 ```{r}
@@ -86,7 +86,7 @@ dat <- dat %>%
 
 
 ```{r}
-df_definitions <- read_csv("dat-definitions.csv") 
+df_definitions <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat-definitions.csv")
 df_definitions 
 ```
 
@@ -99,7 +99,6 @@ df_definitions
 ExPanD(
   df = dat,
   df_def = df_definitions,
-  export_nb_option = TRUE,
   title = "Automatic data exploration",
   abstract = paste("Full sample")
     )
@@ -115,13 +114,16 @@ customized <- readRDS("customized.RDS")
 
 
 
+
+
+
 ```{r eval=FALSE, include=T}
 # Run it in the console
 ExPanD(
   df = dat,
   df_def = df_definitions,
   config_list = customized,
-  export_nb_option = TRUE,
+  #export_nb_option = TRUE,
   title = "Customized data exploration",
   abstract = paste("Full sample")
     )
