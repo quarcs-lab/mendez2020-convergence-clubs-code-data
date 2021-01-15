@@ -1,0 +1,221 @@
+---
+title: "Introduction to expandr"
+output:
+  html_document:
+    keep_md: yes
+  github_document: default
+always_allow_html: true
+---
+ 
+ 
+### Load R packages
+ 
+```{r setup}
+suppressWarnings(suppressMessages({
+  library(knitr)
+  library(kableExtra)
+  library(htmltools)
+  library(tidyverse)
+  library(scales)
+  library(ExPanDaR)
+}))
+knitr::opts_chunk$set(fig.align = 'center')
+```
+ 
+ 
+### Import data
+
+
+```{r}
+dat <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat.csv")
+```
+
+```{r}
+dat %>%
+ glimpse()
+```
+
+
+```{r}
+# Import data definitions
+dat_def <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat-definitions.csv")
+```
+
+```{r}
+dat_def %>%
+  print(n = Inf)
+```
+
+
+
+### Bar Chart
+ 
+```{r bar_chart}
+df <- dat
+df$year <- as.factor(df$year)
+df$hi1990 <- as.factor(df$hi1990)
+p <- ggplot(df, aes(x = year)) +
+  geom_bar(aes(fill = hi1990), position = "fill") +
+  labs(x = "year", fill = "hi1990", y = "Percent") +
+  scale_y_continuous(labels = percent_format()) 
+p <- p + scale_x_discrete(breaks = pretty(as.numeric(as.character(df$year)), n = 10))
+p
+```
+ 
+ 
+### Missing Values
+ 
+```{r missing_values}
+df <- dat
+prepare_missing_values_graph(df, "year")
+```
+ 
+ 
+### Descriptive Statistics
+ 
+```{r descriptive_statistics}
+df <- dat[df$year == "1990", ]
+t <- prepare_descriptive_table(df)
+t$kable_ret  %>%
+  kable_styling("condensed", full_width = F, position = "center")
+```
+ 
+ 
+```{r}
+t <- prepare_descriptive_table(df)
+
+# Create a function to round the decimals of a df
+round_df <- function(x, digits) {
+    # round all numeric variables
+    # x: data frame 
+    # digits: number of digits to round
+    numeric_columns <- sapply(x, mode) == 'numeric'
+    x[numeric_columns] <-  round(x[numeric_columns], digits)
+    x
+}
+
+round_df(t$df, 2)
+```
+ 
+ 
+ 
+### Histogram
+ 
+```{r histogram}
+var <- as.numeric(dat$log_lp[dat$year == "1990"])
+hist(var, main="", xlab = "log_lp", col="red", right = FALSE, breaks= 10)
+```
+ 
+ 
+### Extreme Observations
+ 
+```{r extreme_obs}
+t <- prepare_ext_obs_table(dat, n = 10,
+                           cs_id = "country",
+                           ts_id = "year",
+                           var = "log_lp")
+t$df
+```
+ 
+ 
+### By Group: Bar Graph
+ 
+```{r by_group_bar_graph}
+df <- dat
+df <- df[df$year == "1990", ]
+prepare_by_group_bar_graph(df, "hi1990", "lp", mean, TRUE)$plot +
+  ylab("mean lp")
+```
+ 
+ 
+### By group: Violin plot
+ 
+```{r by_group_violin_graph}
+df <- dat
+prepare_by_group_violin_graph(df, "region", "log_lp", TRUE)
+```
+ 
+ 
+### Trend Graph
+ 
+```{r trend_graph}
+df <- dat
+prepare_trend_graph(df, "year", c("lp"))$plot
+```
+ 
+ 
+### Quantile Trend Graph
+ 
+```{r quantile_trend_graph}
+df <- dat
+prepare_quantile_trend_graph(df, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "lp", points = FALSE)$plot
+```
+ 
+ 
+#### Custimized quantile trend graph  
+```{r}
+log_lp_raw <- prepare_quantile_trend_graph(dat, "year", c(0.05, 0.25, 0.5, 0.75, 0.95), "log_lp_raw", points = FALSE)$plot
+```
+
+
+```{r}
+log_lp_raw <- log_lp_raw +
+theme_minimal() +
+  guides(color = guide_legend(reverse = TRUE)) +
+  scale_color_discrete(name = "Quantile") +
+  labs(x = "",
+       y = "Log of Labor Productivity")
+#ggsave("figs/quintiles_all_log_lp_raw.pdf", width = 6, height = 4)
+log_lp_raw
+```
+
+ 
+### Correlation Graph
+ 
+```{r corrplot}
+df <- dat
+ret <- prepare_correlation_graph(df)
+ret2 <- prepare_correlation_graph(df[, c(10, 11, 12, 13, 14, 15, 16)])
+```
+ 
+ 
+### Scatter Plot
+ 
+```{r scatter_plot}
+df <- dat
+df <- df[, c("country", "year", "log_lp", "log_GDPpc", "region", "pop")]
+df <- df[complete.cases(df), ]
+df$region <- as.factor(df$region)
+set.seed(42)
+df <- sample_n(df, 1000)
+prepare_scatter_plot(df, "log_lp", "log_GDPpc", color = "region", size = "pop", loess = 1)
+```
+ 
+ 
+### Regresssion Table
+ 
+```{r regression}
+df <- dat
+df <- df[, c("log_lp", "log_ky", "log_h", "log_tfp", "country", "year", "hi1990")]
+df <- df[complete.cases(df), ]
+df$hi1990 <- as.factor(df$hi1990)
+df <- droplevels(df)
+t <- prepare_regression_table(df, dvs = "log_lp", idvs = c("log_ky", "log_h", "log_tfp"), feffects = c("country", "year"), clusters = c("country", "year"), byvar = "hi1990", models = "ols")
+HTML(t$table)
+```
+ 
+ 
+```{r}
+df <- dat
+df <- df[, c("log_lp", "log_ky", "log_h", "log_tfp", "country", "year", "hi1990")]
+df <- df[complete.cases(df), ]
+df$hi1990 <- as.factor(df$hi1990)
+df <- droplevels(df)
+t <- prepare_regression_table(df, dvs = "log_lp", idvs = c("log_ky", "log_h", "log_tfp"), feffects = c("country", "year"), clusters = c("country", "year"), byvar = "hi1990", models = "ols", format = "text")
+t
+```
+ 
+ 
+## References
+ 
+- <https://joachim-gassen.github.io/ExPanDaR>

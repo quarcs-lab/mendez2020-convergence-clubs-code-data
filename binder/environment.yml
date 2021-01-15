@@ -1,0 +1,26 @@
+name: devmacro
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python =3.7
+  - bokeh
+  - matplotlib==2.2.5
+  - numpy
+  - pandas
+  - seaborn
+  - pip
+  - ipywidgets
+  - dataprep
+  - ipython
+  - jupyterlab
+  - nbconvert
+  - scikit-learn
+  - statsmodels
+  - sympy
+  - hvplot
+  - holoviews
+  - watermark
+  - vega_datasets
+  - pip:
+    - segregation==1.4

@@ -1,0 +1,105 @@
+---
+title: "Introduction to expandr"
+subtitle: "Automatic exploration"
+author: ""
+output:
+  html_document: default
+  github_document: default
+---
+
+
+# Libraries
+
+```{r setup, include=T}
+suppressWarnings(suppressMessages({
+  library(knitr)
+  library(kableExtra)
+  library(htmltools)
+  library(tidyverse)
+  library(scales)
+  library(ExPanDaR)
+}))
+knitr::opts_chunk$set(fig.align = 'center')
+
+theme_set(theme_minimal())
+
+# Change the presentation of decimal numbers to 4 and avoid scientific notation
+options(prompt="R> ", digits=6, scipen=7)
+```
+
+
+# Import data
+
+```{r}
+dat <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat.csv") 
+```
+
+```{r}
+glimpse(dat)
+```
+
+
+
+Select all variables but id
+
+```{r}
+dat <- dat %>% 
+  select(
+    -id
+  )
+```
+
+
+# Definitions of variables
+
+
+```{r}
+df_definitions <- read_csv("https://raw.githubusercontent.com/quarcs-lab/mendez2020-convergence-clubs-code-data/master/assets/dat-definitions.csv") 
+df_definitions 
+```
+
+# Interactive exploration
+
+## Initial exploration
+
+```{r eval=FALSE, include=T}
+# Run it in the console
+ExPanD(
+  df = dat,
+  df_def = df_definitions,
+  export_nb_option = TRUE,
+  title = "Automatic data exploration",
+  abstract = paste("Full sample")
+    )
+```
+
+
+
+## Customized exploration
+
+```{r}
+customized <- readRDS("expandr-auto.RDS")
+```
+
+
+
+```{r eval=FALSE, include=T}
+# Run it in the console
+ExPanD(
+  df = dat,
+  df_def = df_definitions,
+  config_list = customized,
+  export_nb_option = TRUE,
+  title = "Customized data exploration",
+  abstract = paste("Full sample")
+    )
+```
+
+
+
+
+END
+
+
+
+
