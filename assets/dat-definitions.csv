@@ -19,8 +19,8 @@ log_lp_raw,Log of Labor Productivity,numeric
 log_ky_raw,Log of Capital-Output Ratio,numeric
 log_h_raw,Log of Human Capital,numeric
 log_tfp_raw,Log of Total Factor Productivity,numeric
-log_GDPpc,Trend (HP400) of log of Labor Productivity,numeric
-log_lp,Trend (HP400) of log of GDP per capita,numeric
+log_GDPpc,Trend (HP400) of log of GDP per capita,numeric
+log_lp,Trend (HP400) of log of labor productivity,numeric
 log_ky,Trend (HP400) of log of Capital-Output Ratio,numeric
 log_h,Trend (HP400) of log of Human Capital,numeric
 log_tfp,Trend (HP400) of log of Aggregate Efficiency,numeric
