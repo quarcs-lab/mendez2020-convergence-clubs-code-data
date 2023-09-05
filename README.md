@@ -63,7 +63,7 @@ After installing the package, we need to define some global (macro) parameters s
 clear all
 macro drop _all
 set more off
-
+capture log close
 *-------------------------------------------------------
 ***************** Define five global parameters*********
 *-------------------------------------------------------

@@ -1,6 +1,7 @@
 clear all
 macro drop _all
 set more off
+capture log close
 
 *-------------------------------------------------------
 ***************** Define global parameters*************
